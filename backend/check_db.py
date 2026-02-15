@@ -1,9 +1,13 @@
 from sqlalchemy import create_engine
 import os
+from dotenv import load_dotenv
 
-# Trying both options
-URL_DIRECT = "postgresql://postgres:Rahul%4031082006@db.ocsmppwxorxvyiafdwyf.supabase.co:5432/postgres?sslmode=require"
-URL_POOLER = "postgresql://postgres.ocsmppwxorxvyiafdwyf:Rahul%4031082006@aws-0-ap-south-1.pooler.supabase.com:6543/postgres?sslmode=require"
+# Load environment variables from .env file
+load_dotenv()
+
+# Get database URLs from environment variables
+URL_DIRECT = os.getenv("SUPABASE_DB_URL_DIRECT")
+URL_POOLER = os.getenv("SUPABASE_DB_URL_POOLER")
 
 def check(url, name):
     print(f"Testing {name}...")
