@@ -1,0 +1,88 @@
+/* Barclays-Inspired Stat Card */
+.card {
+    padding: 1.5rem;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00AEEF, #0A3D5C);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #00AEEF;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.title {
+    color: #6B7280;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #E0F2FE, #DBEAFE);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00AEEF;
+}
+
+.value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1A2332;
+    margin-bottom: 0.25rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+    color: #6B7280;
+}
+
+.positive {
+    color: #16A34A;
+    font-weight: 600;
+}
+
+.negative {
+    color: #DC2626;
+    font-weight: 600;
+}

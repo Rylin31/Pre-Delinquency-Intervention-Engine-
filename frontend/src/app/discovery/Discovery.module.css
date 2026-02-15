@@ -1,0 +1,114 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: var(--brand-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.bubble {
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    max-width: 85%;
+    line-height: 1.5;
+    position: relative;
+}
+
+.bubbleBot {
+    background-color: #e2e8f0;
+    color: var(--text-primary);
+    border-bottom-left-radius: 2px;
+    align-self: flex-start;
+}
+
+.bubbleUser {
+    background-color: var(--brand-accent);
+    color: #fff;
+    border-bottom-right-radius: 2px;
+    align-self: flex-end;
+}
+
+.options {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.option {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background-color: #fff;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.option:hover {
+    border-color: var(--brand-accent);
+    background-color: #f0f9ff;
+}
+
+.selected {
+    border-color: var(--brand-accent);
+    background-color: #e0f2fe;
+    /* Light Barclays-ish blue */
+    color: var(--brand-primary);
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    color: var(--text-secondary);
+}
+
+.selected .iconWrapper {
+    background-color: var(--brand-accent);
+    color: #fff;
+}
