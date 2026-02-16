@@ -5,8 +5,8 @@ import { ThemeProvider } from "../contexts/ThemeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Tent - Pre-Delinquency Intervention",
-  description: "Real-time financial risk monitoring and intervention system.",
+  title: "SentinelIQ - Pre-Delinquency Intervention",
+  description: "Real-time financial risk monitoring and intervention system by 8 Bit Thugs.",
 };
 
 export default function RootLayout({ children }) {

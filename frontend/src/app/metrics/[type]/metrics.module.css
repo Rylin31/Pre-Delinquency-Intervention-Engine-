@@ -4,16 +4,17 @@
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
-    background: var(--bg-primary);
+    /* Background handled by global body */
 }
 
 .header {
-    background: var(--bg-card);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow-card);
     margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -32,14 +33,14 @@
 }
 
 .backLink:hover {
-    color: var(--brand-navy);
+    color: #ffffff;
     gap: 0.75rem;
 }
 
 .title {
     font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--brand-primary);
+    font-weight: 700;
+    color: #FFFFFF;
     margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
 }
@@ -88,20 +89,21 @@
 
 .chartCard,
 .listCard {
-    background: var(--bg-card);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
     padding: 1.75rem;
     box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .chartCard h3,
 .listCard h3 {
     font-size: 1rem;
-    color: var(--text-primary);
+    color: #FFFFFF;
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-weight: 600;
     letter-spacing: -0.01em;
 }
@@ -110,6 +112,15 @@
     overflow-x: auto;
     max-height: 500px;
     overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.tableWrapper::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
 }
 
 .table {
@@ -120,26 +131,29 @@
 .table thead {
     position: sticky;
     top: 0;
-    background: var(--bg-secondary);
+    background: rgba(0, 38, 66, 0.85);
+    /* Dark Navy Opaque */
+    backdrop-filter: blur(12px);
     z-index: 10;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .table th {
     text-align: left;
     padding: 0.875rem 1rem;
-    color: var(--text-secondary);
+    color: #94A3B8;
     font-weight: 600;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .table td {
     padding: 0.875rem 1rem;
-    color: var(--text-primary);
+    color: #FFFFFF;
     font-size: 0.875rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .table tr:last-child td {
@@ -147,7 +161,7 @@
 }
 
 .table tbody tr:hover {
-    background: var(--bg-secondary);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .badge {

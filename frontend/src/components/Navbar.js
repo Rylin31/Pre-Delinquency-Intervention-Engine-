@@ -11,9 +11,9 @@ export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
 
     const navItems = [
-        { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+        { href: '/', label: 'Home', icon: LayoutDashboard }, // Using LayoutDashboard icon for Home temporarily or swap
+        { href: '/dashboard', label: 'Dashboard', icon: BarChart3 },
         { href: '/discovery', label: 'Discovery', icon: Users },
-        { href: '/metrics/exposure', label: 'Metrics', icon: BarChart3 },
     ];
 
     return (
