@@ -93,7 +93,7 @@ export default function MetricDetail({ params }) {
         <div className={styles.container}>
             <header className={styles.header}>
                 <div>
-                    <Link href="/" className={styles.backLink}>
+                    <Link href="/dashboard" className={styles.backLink}>
                         <ArrowLeft size={20} /> Back to Dashboard
                     </Link>
                     <h1 className={styles.title}>{stats.title}</h1>

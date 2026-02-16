@@ -58,7 +58,7 @@ export default function UserProfile({ params }) {
         <div className={styles.container}>
             {/* Minimal Header */}
             <header className={styles.header}>
-                <Link href="/" className={styles.backLink}>
+                <Link href="/dashboard" className={styles.backLink}>
                     <ArrowLeft size={18} /> <span>Back</span>
                 </Link>
                 <div className={styles.headerContent}>

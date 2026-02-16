@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, Zap, BarChart3, Database, Lock, Globe } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Zap, BarChart3, Database, Lock, Globe, Code, Terminal, Cpu, Cloud, Activity, Box, Server } from 'lucide-react';
 import Link from 'next/link';
 import styles from './Landing.module.css';
 
@@ -35,7 +35,7 @@ export default function LandingPage() {
                     variants={staggerContainer}
                 >
                     <motion.h1 className={styles.title} variants={fadeInUp}>
-                        SentinelIQ <br /> by 8 Bit Thugs
+                        SentinelIQ <br /> by Team 8 Bit Thugs
                     </motion.h1>
                     <motion.p className={styles.subtitle} variants={fadeInUp}>
                         Empowering banks to detect early signs of financial stress and offer empathetic,
@@ -91,7 +91,7 @@ export default function LandingPage() {
             </section>
 
             {/* Solution / Novelties */}
-            <section className={styles.section} style={{ background: 'rgba(255,255,255,0.02)' }}>
+            <section className={styles.section} style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '24px', margin: '2rem auto' }}>
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -121,13 +121,7 @@ export default function LandingPage() {
                                 outreach instead of aggressive collections.
                             </p>
                         </div>
-                        <div className={styles.card}>
-                            <h3 className={styles.cardTitle}>Explainable AI</h3>
-                            <p className={styles.cardText}>
-                                Generates interpretable SHAP values for every risk score, ensuring regulatory
-                                compliance and fair treatment.
-                            </p>
-                        </div>
+
                     </div>
                 </motion.div>
             </section>
@@ -143,11 +137,27 @@ export default function LandingPage() {
                         viewport={{ once: true }}
                         variants={staggerContainer}
                     >
-                        {['Next.js', 'React', 'FastAPI', 'Python', 'PostgreSQL', 'XGBoost', 'LightGBM', 'AWS SageMaker', 'Apache Kafka', 'Docker', 'Kubernetes'].map((tech) => (
-                            <motion.span key={tech} className={styles.techTag} variants={fadeInUp}>
-                                <Zap size={14} fill="#00AEEF" color="#00AEEF" /> {tech}
-                            </motion.span>
-                        ))}
+                        {['Next.js', 'React', 'FastAPI', 'Python', 'PostgreSQL', 'XGBoost', 'LightGBM', 'AWS SageMaker', 'Apache Kafka', 'Docker', 'Kubernetes'].map((tech) => {
+                            const iconMap = {
+                                'Next.js': Globe,
+                                'React': Code,
+                                'FastAPI': Zap,
+                                'Python': Terminal,
+                                'PostgreSQL': Database,
+                                'XGBoost': Cpu,
+                                'LightGBM': BarChart3,
+                                'AWS SageMaker': Cloud,
+                                'Apache Kafka': Activity,
+                                'Docker': Box,
+                                'Kubernetes': Server
+                            };
+                            const TechIcon = iconMap[tech] || Zap;
+                            return (
+                                <motion.span key={tech} className={styles.techTag} variants={fadeInUp}>
+                                    <TechIcon size={14} color="#00AEEF" /> {tech}
+                                </motion.span>
+                            );
+                        })}
                     </motion.div>
                 </div>
             </div>
@@ -192,7 +202,7 @@ export default function LandingPage() {
 
             {/* Footer */}
             <footer style={{ textAlign: 'center', padding: '4rem', borderTop: '1px solid rgba(255,255,255,0.1)', color: '#64748B' }}>
-                <p>© 2026 Barclays Hackathon Team. Built with ❤️ and Code.</p>
+                <p>© 2026 Barclays Hack-o-Hire Team : 8 Bit Thugs. Built with ❤️ and Code.</p>
             </footer>
         </div>
     );

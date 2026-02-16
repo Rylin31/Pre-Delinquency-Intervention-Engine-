@@ -138,7 +138,8 @@
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 2rem;
-    border-radius: 16px;
+    border-radius: 24px !important;
+    overflow: hidden;
     transition: transform 0.3s ease;
     backdrop-filter: blur(10px);
 }
@@ -177,7 +178,13 @@
 /* --- Tech Stack --- */
 .techSection {
     background: rgba(0, 0, 0, 0.2);
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
+    margin: 4rem auto;
+    width: calc(100% - 4rem);
+    max-width: 1200px;
+    border-radius: 24px;
+    position: static;
+    transform: none;
 }
 
 .techGrid {

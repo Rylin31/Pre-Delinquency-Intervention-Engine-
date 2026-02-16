@@ -158,7 +158,7 @@ export default function Dashboard() {
         <header className={styles.sectionHeader} style={{ marginBottom: '2rem' }}>
           <div>
             <h1 className={styles.title}>SentinelIQ</h1>
-            <p style={{ color: '#E2E8F0' }}>Real-time financial risk monitoring by 8 Bit Thugs</p>
+            <p style={{ color: '#E2E8F0' }}>Real-time financial risk monitoring by Team 8 Bit Thugs</p>
           </div>
           <Link href="/discovery">
             <button className="btn btn-primary flex-center" style={{ gap: '0.5rem' }}>
