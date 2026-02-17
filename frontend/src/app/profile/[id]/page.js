@@ -11,7 +11,7 @@ import {
 import { API_ENDPOINTS } from '../../../config/api';
 import Link from 'next/link';
 
-const COLORS = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#64748b'];
+const COLORS = ['#00AEEF', '#00395D', '#008A4B', '#FF9E1B', '#E20613', '#64748B', '#A0AEC0'];
 
 export default function UserProfile({ params }) {
     const { id } = use(params);
@@ -58,7 +58,7 @@ export default function UserProfile({ params }) {
         <div className={styles.container}>
             {/* Minimal Header */}
             <header className={styles.header}>
-                <Link href="/" className={styles.backLink}>
+                <Link href="/dashboard" className={styles.backLink}>
                     <ArrowLeft size={18} /> <span>Back</span>
                 </Link>
                 <div className={styles.headerContent}>
@@ -113,7 +113,7 @@ export default function UserProfile({ params }) {
                         <h3 className={styles.cardTitle}>Expenditure Breakdown</h3>
                         <div className={styles.chartLayout}>
                             <div className={styles.chartWrapper}>
-                                <ResponsiveContainer width="100%" height={220}>
+                                <ResponsiveContainer width="100%" height={300}>
                                     <PieChart>
                                         <Pie
                                             data={user.expenditure_breakdown}

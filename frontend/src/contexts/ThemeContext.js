@@ -9,7 +9,7 @@ export function ThemeProvider({ children }) {
 
     useEffect(() => {
         // Check localStorage for saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         setTheme(savedTheme);
         document.documentElement.setAttribute('data-theme', savedTheme);
     }, []);

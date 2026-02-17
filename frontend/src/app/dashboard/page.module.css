@@ -1,0 +1,67 @@
+/* Dashboard Premium Theme */
+.main {
+  padding: 2rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  position: relative;
+  /* Background handled by body for edge-to-edge coverage */
+}
+
+/* Background Mesh Effect */
+/* Background Mesh Effect handled by global body style */
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #FFFFFF 0%, #00AEEF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.03);
+  /* Glass Base */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}

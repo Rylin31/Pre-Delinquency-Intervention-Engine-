@@ -93,7 +93,7 @@ export default function MetricDetail({ params }) {
         <div className={styles.container}>
             <header className={styles.header}>
                 <div>
-                    <Link href="/" className={styles.backLink}>
+                    <Link href="/dashboard" className={styles.backLink}>
                         <ArrowLeft size={20} /> Back to Dashboard
                     </Link>
                     <h1 className={styles.title}>{stats.title}</h1>
@@ -105,32 +105,32 @@ export default function MetricDetail({ params }) {
                 {/* Chart Section */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className={styles.chartCard}>
                     <h3>Visual Breakdown</h3>
-                    <div style={{ width: '100%', height: 420 }}>
+                    <div style={{ width: '100%', height: 500 }}>
                         {type === 'exposure' ? (
                             <ResponsiveContainer>
                                 <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 85 }}>
-                                    <CartesianGrid strokeDasharray="3 3" stroke={theme === 'dark' ? '#2D3748' : '#E5E7EB'} />
+                                    <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                                     <XAxis
                                         dataKey="name"
-                                        tick={{ fill: theme === 'dark' ? '#9CA3AF' : '#6B7280', fontSize: 10 }}
-                                        stroke={theme === 'dark' ? '#2D3748' : '#E5E7EB'}
+                                        tick={{ fill: '#F8FAFC', fontSize: 10 }}
+                                        stroke="#334155"
                                         angle={-35}
                                         textAnchor="end"
                                         height={100}
                                         interval={0}
                                     />
                                     <YAxis
-                                        tick={{ fill: theme === 'dark' ? '#9CA3AF' : '#6B7280', fontSize: 11 }}
-                                        stroke={theme === 'dark' ? '#2D3748' : '#E5E7EB'}
+                                        tick={{ fill: '#F8FAFC', fontSize: 11 }}
+                                        stroke="#334155"
                                         tickFormatter={formatCurrency}
                                         width={85}
                                     />
                                     <Tooltip
                                         contentStyle={{
-                                            background: theme === 'dark' ? '#1E2433' : '#FFFFFF',
-                                            border: `1px solid ${theme === 'dark' ? '#2D3748' : '#E5E7EB'}`,
+                                            background: '#1E2433',
+                                            border: '1px solid #2D3748',
                                             borderRadius: '6px',
-                                            color: theme === 'dark' ? '#E5E7EB' : '#1A2332'
+                                            color: '#f8fafcb4'
                                         }}
                                         formatter={formatTooltipCurrency}
                                     />
@@ -149,7 +149,7 @@ export default function MetricDetail({ params }) {
                                         paddingAngle={3}
                                         dataKey="value"
                                         label={({ name, value, percent }) => `${value} (${(percent * 100).toFixed(0)}%)`}
-                                        labelLine={{ stroke: theme === 'dark' ? '#9CA3AF' : '#6B7280', strokeWidth: 1 }}
+                                        labelLine={{ stroke: '#F8FAFC', strokeWidth: 1 }}
                                     >
                                         {data.map((entry, index) => (
                                             <Cell key={`cell-${index}`} fill={entry.color || COLORS[index % COLORS.length]} />
@@ -170,8 +170,28 @@ export default function MetricDetail({ params }) {
                                     />
                                 </PieChart>
                             </ResponsiveContainer>
+                        ) : type === 'recovery' ? (
+                            <div className="flex-center" style={{ height: '100%', flexDirection: 'column', gap: '1rem' }}>
+                                <ResponsiveContainer width="100%" height={500}>
+                                    <BarChart data={data} layout="vertical" margin={{ top: 20, right: 30, left: 40, bottom: 5 }}>
+                                        <CartesianGrid strokeDasharray="3 3" stroke="#334155" horizontal={false} />
+                                        <XAxis type="number" domain={[0, 100]} stroke="#F8FAFC" />
+                                        <YAxis dataKey="name" type="category" width={100} stroke="#F8FAFC" />
+                                        <Tooltip
+                                            contentStyle={{
+                                                background: '#1E2433',
+                                                border: '1px solid #2D3748',
+                                                borderRadius: '6px',
+                                                color: '#F8FAFC'
+                                            }}
+                                        />
+                                        <Bar dataKey="value" name="Recovery Score" fill="#00AEEF" radius={[0, 4, 4, 0]} barSize={20} />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Higher score indicates better recovery progress.</p>
+                            </div>
                         ) : (
-                            <div className="flex-center" style={{ height: '100%', color: 'var(--text-secondary)' }}>
+                            <div className="flex-center" style={{ height: '100%', color: '#E2E8F0' }}>
                                 Table View Only
                             </div>
                         )}

@@ -17,7 +17,7 @@ export default function StatCard({ title, value, change, isPositive, icon }) {
             {change && (
                 <div className={`${styles.meta} ${isPositive ? styles.positive : styles.negative}`}>
                     <span>{isPositive ? "↑" : "↓"} {change}</span>
-                    <span style={{ color: 'var(--text-secondary)' }}>vs last month</span>
+                    <span style={{ color: '#F8FAFC', opacity: 0.8 }}>vs last month</span>
                 </div>
             )}
         </div>

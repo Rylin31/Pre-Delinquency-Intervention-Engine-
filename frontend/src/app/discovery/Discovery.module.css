@@ -4,30 +4,33 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background-color: var(--bg-secondary);
+    background: transparent;
+    /* Show global body gradient */
 }
 
 .card {
     width: 100%;
     max-width: 500px;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: rgba(0, 38, 66, 0.6);
+    /* Translucent Navy */
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     padding: 3rem;
     display: flex;
     flex-direction: column;
 }
 
 .title {
-    color: var(--brand-primary);
+    color: #FFFFFF;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
 
 .subtitle {
-    color: var(--text-secondary);
+    color: #E2E8F0 !important;
     font-size: 0.95rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -41,6 +44,15 @@
     max-height: 400px;
     overflow-y: auto;
     padding-right: 0.5rem;
+    scrollbar-width: none !important;
+    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* IE/Edge */
+}
+
+.chat::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
 }
 
 .bubble {
@@ -52,16 +64,17 @@
     position: relative;
 }
 
-.bubbleBot {
-    background-color: #e2e8f0;
-    color: var(--text-primary);
+.bot {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF !important;
     border-bottom-left-radius: 2px;
     align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.bubbleUser {
+.user {
     background-color: var(--brand-accent);
-    color: #fff;
+    color: #FFFFFF !important;
     border-bottom-right-radius: 2px;
     align-self: flex-end;
 }
@@ -75,8 +88,9 @@
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
-    background-color: #fff;
-    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Glass */
+    color: #FFFFFF;
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
@@ -87,14 +101,14 @@
 
 .option:hover {
     border-color: var(--brand-accent);
-    background-color: #f0f9ff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .selected {
     border-color: var(--brand-accent);
-    background-color: #e0f2fe;
+    background-color: rgba(0, 174, 239, 0.2);
     /* Light Barclays-ish blue */
-    color: var(--brand-primary);
+    color: #FFFFFF;
 }
 
 .iconWrapper {
@@ -111,4 +125,23 @@
 .selected .iconWrapper {
     background-color: var(--brand-accent);
     color: #fff;
+}
+
+.thankYouContainer {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.thankYouIcon {
+    display: block;
+    margin: 0 auto 0.5rem auto;
+    color: #34d399;
+    /* emerald-400 */
+}
+
+.thankYouTitle {
+    color: #FFFFFF !important;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }

@@ -99,7 +99,7 @@ export default function DiscoveryFlow() {
                                         className={`${styles.option} ${reason === r.id ? styles.selected : ''}`}
                                         onClick={() => handleSelect(r.id)}
                                     >
-                                        <Icon size={20} className={reason === r.id ? 'text-indigo-400' : 'text-slate-400'} />
+                                        <Icon size={20} className={reason === r.id ? 'text-indigo-400' : 'text-white'} />
                                         {r.label}
                                         {reason === r.id && <CheckCircle size={16} className="text-emerald-400 ml-auto" />}
                                     </div>
@@ -112,12 +112,12 @@ export default function DiscoveryFlow() {
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            className="text-center"
+                            className={styles.thankYouContainer}
                         >
                             <div className="mb-4">
-                                <CheckCircle size={48} className="mx-auto text-emerald-400 mb-2" />
-                                <h3 className="text-xl font-bold">Thank You</h3>
-                                <p className="text-secondary text-sm mt-2">
+                                <CheckCircle size={48} className={styles.thankYouIcon} />
+                                <h3 className={styles.thankYouTitle}>Thank You</h3>
+                                <p className={styles.subtitle} style={{ color: '#E2E8F0', fontSize: '0.9rem' }}>
                                     Based on your input ({reasons.find(r => r.id === reason)?.label}),
                                     we have paused late fees for 14 days.
                                 </p>
